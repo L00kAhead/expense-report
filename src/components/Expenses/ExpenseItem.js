@@ -8,7 +8,7 @@ const ExpenseItem = ({ title, amount, date }) => {
     <Card className="expense-item">
       <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2 className="expense-item__title">{currentTitle}</h2>
+        <h2 className="expense-item__title">{title}</h2>
         <div className="expense-item__price">$ {amount}</div>
       </div>
     </Card>
