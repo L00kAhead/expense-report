@@ -1,5 +1,5 @@
 import "./index.css";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses.js";
 
 const App = () => {
   const expenses = [
@@ -31,7 +31,8 @@ const App = () => {
   //   React.createElement(Expenses, { items: expenses })
   // );
 
-
+      ***  React projects like the ones we create via "create-react-app" support JSX syntax. 
+      It gets compiled to standard JS code behind the scenes.
   It is reason why in past we needed to 
   import React from "react";
   */
