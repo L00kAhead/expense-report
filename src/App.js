@@ -24,6 +24,18 @@ const App = () => {
     },
   ];
 
+  /*JSX Under the hood
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
+
+  It is reason why in past we needed to 
+  import React from "react";
+  */
+
   return (
     <div className="App">
       <Expenses items={expenses} />
