@@ -4,6 +4,7 @@ import "./ExpensesFilter.css";
 const ExpensesFilter = ({ selectedYear, onExpenseFiltered }) => {
   const yearChangeHandler = (event) => {
     onExpenseFiltered(event.target.value);
+    
   };
 
   return (
