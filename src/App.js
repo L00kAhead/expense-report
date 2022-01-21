@@ -24,7 +24,10 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
-
+  const addExpenseHandler = (expense) => {
+    expenses.push(expense);
+    console.log(expenses);
+  };
   /*JSX Under the hood
   // return React.createElement(
   //   "div",
@@ -34,13 +37,12 @@ const App = () => {
 
       ***  React projects like the ones we create via "create-react-app" support JSX syntax. 
       It gets compiled to standard JS code behind the scenes.
-  It is reason why in past we needed to 
-  import React from "react";
+  It is the reason why in past we needed to import React from "react";
   */
 
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
