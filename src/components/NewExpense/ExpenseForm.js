@@ -24,7 +24,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
       date: new Date(enteredDate),
     };
     // console.log(expenseData);
-    onSaveExpenseData(expenseData);
+    onSaveExpenseData(expenseData); //uplifting data& *state-up
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");

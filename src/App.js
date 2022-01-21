@@ -1,44 +1,38 @@
 import "./index.css";
 import Expenses from "./components/Expenses/Expenses.js";
 import NewExpense from "./components/NewExpense/NewExpense";
+import React, { useState } from "react";
+
+const DUMMY_EXPENSES = [
+  {
+    id: "e1",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
+  { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: "e3",
+    title: "Car Insurance",
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: "e4",
+    title: "New Desk (Wooden)",
+    amount: 450,
+    date: new Date(2021, 5, 12),
+  },
+];
 
 const App = () => {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-  ];
-  const addExpenseHandler = (expense) => {
-    expenses.push(expense);
-    console.log(expenses);
-  };
-  /*JSX Under the hood
-  // return React.createElement(
-  //   "div",
-  //   {},
-  //   React.createElement(Expenses, { items: expenses })
-  // );
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-      ***  React projects like the ones we create via "create-react-app" support JSX syntax. 
-      It gets compiled to standard JS code behind the scenes.
-  It is the reason why in past we needed to import React from "react";
-  */
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
+  };
 
   return (
     <div className="App">
@@ -49,3 +43,15 @@ const App = () => {
 };
 
 export default App;
+
+/*JSX Under the hood
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
+      ***  React projects like the ones we create via "create-react-app" support JSX syntax. 
+      It gets compiled to standard JS code behind the scenes.
+  It is the reason why in past we needed to import React from "react";
+  */
