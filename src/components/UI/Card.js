@@ -7,7 +7,6 @@ const Card = (props) => {
 
 export default Card;
 
-// What we have gained with this?
 //     - Extract code duplication from Expenses and ExpenseItem
 //     - Also the JSX HTML code <div> container.
 
